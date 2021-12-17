@@ -8,11 +8,18 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-
+AdhocComponentWithVariants javaComponent = (AdhocComponentWithVariants) project.components.findByName("java")
+javaComponent.withVariantsFromConfiguration(configurations.java11ApiElements) {
+    it.mapToMavenScope('runtime') // or compile if you want these to leak to the consumer compile classpath
+}
+javaComponent.withVariantsFromConfiguration(configurations.java11RuntimeElements) {
+    it.mapToMavenScope('runtime')
+}
 dependencies {
     implementation 'dev.drewhamilton.androidtime:datetimeformatters:2.2.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     testImplementation 'com.codeborne:selenide:6.1.1'
+    implementation group: 'com.google.dagger', name: 'hilt-core', version: '2.40'
 }
 
 test {
