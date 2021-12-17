@@ -33,4 +33,4 @@ jobs:
       
        build_script:
       -  chmod u+x gradlew
-      - ./gradlew test  --info  # запускаем тест, флаг --info позволяет выводить больше информации
+     
