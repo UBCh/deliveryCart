@@ -15,16 +15,16 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestDeliveryCart {
 
-    // java.util.Date date = new java.util.Date();
+    java.util.Date date = new java.util.Date();
 
     @Test
     void shouldSubmittingForm() {
         open("http://localhost:9999");
         $("[data-test-id='city']").setValue("москва");
-       // GetData data = new GetData();
-        //$(".calendar-input").val(String.valueOf(data));
-        $("[data-test-id='date']").setValue("20.12.2021");
-        $("[data-test-id='name']").setValue("Миссис Марпл");
+        GetData data = new GetData();
+        $(".calendar-input").val(String.valueOf(data));
+        // $("[data-test-id='date']").setValue("24.12.2021");
+        $("[data-test-id='name']").setValue("Мис Пигги");
         $("[data-test-id='phone']").setValue("+79095463728");
         $("[data-test-id='agreement']").click();
         $(".button__text").click();

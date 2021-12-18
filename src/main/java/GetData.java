@@ -3,6 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.text.*;
+
 public class GetData {
 
     public GetData() {
@@ -12,12 +13,12 @@ public class GetData {
 
     public static void GoData(String[] args) {
         Date currentDate = new Date();
-        // преобразовsdftv дату в календарь
+        // преобразовываем дату в календарь
         Calendar c = Calendar.getInstance();
         c.setTime(currentDate);
         // добавляем 3 дня
         c.add(Calendar.DATE, 3);
-        // конвертируем календарь в дату
+        //конвертируем календарь в дату
         Date currentDatePlusOne = c.getTime();
     }
 }
