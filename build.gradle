@@ -8,10 +8,7 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-AdhocComponentWithVariants javaComponent = (AdhocComponentWithVariants) project.components.findByName("java")
-javaComponent.withVariantsFromConfiguration(configurations.java11ApiElements) {
-    it.mapToMavenScope('runtime') // or compile if you want these to leak to the consumer compile classpath
-}
+
 javaComponent.withVariantsFromConfiguration(configurations.java11RuntimeElements) {
     it.mapToMavenScope('runtime')
 }
