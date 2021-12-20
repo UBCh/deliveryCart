@@ -4,18 +4,18 @@ plugins {
 
 group 'ru.netology'
 version '1.0-SNAPSHOT'
-
+sourceCompatibility = 11
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 repositories {
     mavenCentral()
 }
 
 
 dependencies {
-    implementation 'dev.drewhamilton.androidtime:datetimeformatters:2.2.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     testImplementation 'com.codeborne:selenide:6.1.1'
-    implementation group: 'com.google.dagger', name: 'hilt-core', version: '2.40'
-    implementation 'dev.drewhamilton.androidtime:datetimeformatters-threetenbp:2.2.0:2.2.0.'
+
 }
 
 test {
